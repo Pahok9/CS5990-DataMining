@@ -36,6 +36,11 @@ d2_vector = doc_term_matrix(doc2, terms)
 d3_vector = doc_term_matrix(doc3, terms)
 d4_vector = doc_term_matrix(doc4, terms)
 
+print(d1_vector)
+print(d2_vector)
+print(d3_vector)
+print(d4_vector)
+
 # Compare the pairwise cosine similarities and store the highest one
 # Use cosine_similarity([X], [Y]) to calculate the similarities between 2 vectors only
 # Use cosine_similarity([X, Y, Z]) to calculate the pairwise similarities between multiple vectors
@@ -50,4 +55,4 @@ print(cosine_similarities)
 
 # Print the highest cosine similarity following the information below
 # The most similar documents are: doc1 and doc2 with cosine similarity = x
-print("The most similar documents are: dco2 and doc4, and doc3 and doc4 with cosine similarity =", cosine_similarities[24])
+print("The most similar documents are: dco1 and doc4 with cosine similarity =", cosine_similarities[14])
