@@ -43,16 +43,17 @@ print(d4_vector)
 
 # Compare the pairwise cosine similarities and store the highest one
 # Use cosine_similarity([X], [Y]) to calculate the similarities between 2 vectors only
-# Use cosine_similarity([X, Y, Z]) to calculate the pairwise similarities between multiple vectors
-cosine_similarities = {}
-cosine_similarities[12] = cosine_similarity([d1_vector], [d2_vector])[0][0]
-cosine_similarities[13] = cosine_similarity([d1_vector], [d3_vector])[0][0]
-cosine_similarities[14] = cosine_similarity([d1_vector], [d4_vector])[0][0]
-cosine_similarities[23] = cosine_similarity([d2_vector], [d3_vector])[0][0]
-cosine_similarities[24] = cosine_similarity([d2_vector], [d4_vector])[0][0]
-cosine_similarities[34] = cosine_similarity([d3_vector], [d4_vector])[0][0]
-print(cosine_similarities)
+# Use cosine_similarity([X, Y, Z]) to calculate the pairwise similarities between multiple vectorswdw
+cosine_similarities = []
+cosine_similarities.append(cosine_similarity([d1_vector], [d2_vector])[0][0])
+cosine_similarities.append(cosine_similarity([d1_vector], [d3_vector])[0][0])
+cosine_similarities.append(cosine_similarity([d1_vector], [d4_vector])[0][0])
+cosine_similarities.append(cosine_similarity([d2_vector], [d3_vector])[0][0])
+cosine_similarities.append(cosine_similarity([d2_vector], [d4_vector])[0][0])
+cosine_similarities.append(cosine_similarity([d3_vector], [d4_vector])[0][0])
+# print(cosine_similarities)
 
-# Print the highest cosine similarity following the information below
+# Print the highest cosine similarity following the informawon below
 # The most similar documents are: doc1 and doc2 with cosine similarity = x
-print("The most similar documents are: dco1 and doc4 with cosine similarity =", cosine_similarities[14])
+cosine_similarities.sort()
+print("The most similar documents are: dco1 and doc4 with cosine similarity =", cosine_similarities[-1])
