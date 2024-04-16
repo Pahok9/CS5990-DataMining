@@ -12,12 +12,10 @@ import pandas as pd
 import numpy as np
 
 
-def discretize_value(value):
-    return min(classes, key=lambda x: abs(x - value))
-
-
 #11 classes after discretization
-classes = [i for i in range(-22, 40, 6)]
+def discretize_value(value):
+    classes = [i for i in range(-22, 40, 6)]
+    return min(classes, key=lambda x: abs(x - value))
 
 #reading the training data
 #--> add your Python code here
@@ -45,7 +43,7 @@ clf = clf.fit(x_training, y_training)
 #to calculate the % difference between the prediction and the real output values use: 100*(|predicted_value - real_value|)/real_value))
 #--> add your Python code here
 correct_prediction = 0
-for real_value, predicted_value in zip(clf.predict(x_test), y_test):
+for predicted_value, real_value in zip(clf.predict(x_test), y_test):
     percentage_difference = 100 * abs(predicted_value - real_value) / real_value
     if percentage_difference <= 15:
         correct_prediction += 1
